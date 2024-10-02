@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+body.dark-mode {
+  --background-color: #252525;
+  --text-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #171d25;
+  color: white;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  border-bottom: 3px solid #1a9fff;
+  padding-bottom: 3px;
+  position: relative;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+  border-bottom-color: #df1591;
+}
+
+.logo {
+  width: 150px;
+  justify-content: flex-start;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: -40px;
+  background-color: #171d25;
+  min-width: 150px;
+  padding: 10px;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #1a9fff;
+}
+
+.nav-item:hover .dropdown-content {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-items.active .dropdown-content .logo {
+    position: relative;
+    display: none;
+  }
+
+  .nav-item.active .dropdown-content .logo {
+    display: flex;
+  }
+
+  .nav-items.active .dropdown-content .logo {
+    position: relative;
+  }
+  .footer {
+    flex: 1 100%;
+    order: 3;
+  }
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-items.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .footer {
+    flex: 1 100%;
+    order: 3;
+  }
+}
+
+.footer {
+  background: #171d25;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
